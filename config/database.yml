@@ -17,8 +17,8 @@ development:
   adapter: postgresql
   encoding: utf8
   database: blog_db
-  username: deepankar
-  password: deepankar
+  username: blog_db
+  password: blog_db
   host: localhost
   pool: 5
   timeout: 5000
