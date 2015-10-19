@@ -1,0 +1,19 @@
+<div id='head'>Welcome to Sports section</div>
+
+  <div id = "index">
+    <% @sports.each do |sports| %>
+	    <p><%=link_to sports.name, sports %> </h4></p>
+		<p><%=truncate sports.content, length: 160  %> <%= link_to 'read more', sport_path(sports) %> </p>
+
+		<% if user_signed_in? %>      
+	        
+	        <%= link_to 'Edit', edit_sport_path(sports) %>
+	        <%= link_to 'Destroy', sports, method: :delete, data: { confirm: 'Are you sure?' } %>
+	    <%end%> 
+    <% end %>
+  </div>
+
+<br>
+<% if user_signed_in? %>
+	<%= link_to 'New Blog', new_sport_path %>
+<%end%>

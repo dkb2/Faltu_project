@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <div id = "index">
+    
+      <h1><%=@sports.name %></h1>
+      <p><%= @sports.content %></p>
+      <small>sports bloged <%= time_ago_in_words(@sports.created_at) %> ago <br/> </small>
+      
+      <br />
+      <%= link_to 'Back to sports', sports_path %> 
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_sport_path(@sports[:id]) %>
+        <%= link_to 'Destroy', @sports, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%end%>
+   
+  </div>
+</html>

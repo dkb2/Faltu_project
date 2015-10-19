@@ -1,0 +1,13 @@
+
+<div id='box'>
+<table>
+    
+
+<tr>   
+  <% @sports.collect{ |p| {name: p.name, content: p.content }}.each do |pr| %>
+    <th width="25px"><%= pr[:name] %></th>
+    <th width="25px"><%= truncate pr[:content], length: 160  %> </th>
+  <% end %>
+</tr>
+</table>	
+</div>

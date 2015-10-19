@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id='banner'>
+	<div id='tab'>
+		<%= link_to 'Home', root_path %>
+		<%= link_to 'Sports', sports_path %>
+		<%= link_to 'Music', music_index_path %>
+		<%= link_to 'Entertainment' , entertainment_index_path %>
+		<%= link_to 'Life Productivity', life_productivity_index_path %>
+		<% if user_signed_in? %>
+			
+			<div class='side-bar'><%=image_tag current_user.avatar.url(:medium)%></div>
+			
+			<%= link_to "sign out", destroy_user_session_path, :method =>:delete %>
+		<% else %>
+			<%= link_to "sign up", new_user_registration_path%> or <%= link_to "sign in", new_user_session_path %>
+		<% end %>
+	</div> 
+
+	<%= yield %>
+</div>
+</body>
+</html>

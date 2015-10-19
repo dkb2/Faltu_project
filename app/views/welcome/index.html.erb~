@@ -1,0 +1,6 @@
+<div id='tab'>
+	<%= link_to 'Sports', sports_path %>
+</div> 
+	
+
+

@@ -1,0 +1,57 @@
+
+Tabulous.setup do |config|
+  
+
+    config.welcome_tab do
+      text          { 'Welcome' }
+      link_path     { root_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('welcome') }
+    end
+
+    config.sports_tab do
+      text          { 'Sports' }
+      link_path     { sports_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('sports') }
+    end
+
+    config.music_tab do
+      text          { 'Music' }
+      link_path     { music_index_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('music') }
+    end
+
+    config.entertainment_tab do
+      text          { 'Entertainment' }
+      link_path     { entertainment_index_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('entertainment') }
+    end
+
+    config.life_productivity_tab do
+      text          { 'Life Productivity' }
+      link_path     { life_productivity_index_path }
+      visible_when  { true }
+      enabled_when  { true }
+      active_when   { in_action('any').of_controller('life_productivity') }
+    end
+config.active_tab_clickable = false
+  config.always_render_subtabs = false
+  config.raise_error_if_no_tab_found = true
+  config.html5 = false
+  config.css.scaffolding = true
+  # config.css.background_color = '#ccc'
+  # config.css.text_color = '#444'
+  # config.css.active_tab_color = 'white'
+  # config.css.hover_tab_color = '#ddd'
+  # config.css.inactive_tab_color = '#aaa'
+  # config.css.inactive_text_color = '#888'
+end
+ 
+

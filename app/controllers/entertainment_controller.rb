@@ -1,0 +1,2 @@
+class EntertainmentController < ApplicationController
+end

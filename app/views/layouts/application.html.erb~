@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id='banner'>
+
+</div>
+	<div id='tab'>
+		<%= link_to 'Sports', sports_path %>
+		<%= link_to 'Music', music_index_path %>
+		<%= link_to 'Entertainment' , entertainment_index_path %>
+		<%= link_to 'Life Productivity', life_productivity_index_path %>
+	</div> 
+	<%= yield %>
+
+</body>
+</html>

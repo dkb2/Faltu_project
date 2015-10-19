@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <div id = "index">
+    
+      <h1><%=@music.name %></h1>
+      <p><%= @music.content %></p>
+      <small>music bloged <%= time_ago_in_words(@music.created_at) %> ago <br/> </small>
+      
+      <br />
+      <%= link_to 'Back to music',  music_index_path %> 
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_music_path(@music[:id]) %>
+        <%= link_to 'Destroy', @music, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%end%>
+   
+  </div>
+</html>

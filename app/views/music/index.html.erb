@@ -1,0 +1,19 @@
+<div id='head'>Welcome to Music section</div>
+
+  <div id = "index">
+    <% @music.each do |music| %>
+	    <p><%=link_to music.name, music %> </h4></p>
+		<p><%=truncate music.content, length: 160  %> <%= link_to 'read more', music_path(music) %> </p>
+
+		<% if user_signed_in? %>      
+	        
+	        <%= link_to 'Edit', edit_music_path(music) %>
+	        <%= link_to 'Destroy', music, method: :delete, data: { confirm: 'Are you sure?' } %>
+	    <%end%> 
+    <% end %>
+  </div>
+
+<br>
+<% if user_signed_in? %>
+	<%= link_to 'New Blog', new_music_path %>
+<%end%>

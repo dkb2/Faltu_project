@@ -1,0 +1,24 @@
+
+<h1>Add a new blog </h1>
+<%= form_for @music do |m| %>
+<%if @music.errors.any? %>
+<h2>Errors:</h2>
+<ul>
+<%@music.errors.full_messages.each do |f| %>
+<li><%= m %></li>
+<%end%>
+</ul>
+<%end%>
+<p><%= m.label :name %><br/>
+<%= m.text_field :name %>
+</p>
+<p><%= m.label :content %><br/>
+<%= m.text_area :content %>
+</p>
+<p><%= m.label :blog_type %><br/>
+<%= m.text_area :blog_type %>
+</p>
+<p><%= m.submit "Add a new blog" %>
+<%binding.pry%>
+</p>
+<%end%>
