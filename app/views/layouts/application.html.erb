@@ -10,10 +10,8 @@
 <div id='banner'>
 	<div id='tab'>
 		<%= link_to 'Home', root_path %>
-		<%= link_to 'Sports', sports_path %>
-		<%= link_to 'Music', music_index_path %>
-		<%= link_to 'Entertainment' , entertainment_index_path %>
-		<%= link_to 'Life Productivity', life_productivity_index_path %>
+		<%= link_to 'Sports', bloggs_path %>
+		
 		<% if user_signed_in? %>
 			
 			<div class='side-bar'><%=image_tag current_user.avatar.url(:medium)%></div>

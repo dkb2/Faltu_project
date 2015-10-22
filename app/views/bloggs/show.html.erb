@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <div id = "index">
+    
+      <h1><%=@blogs.name %></h1>
+      <p><%= @blogs.content %></p>
+      <small>blogs bloged <%= time_ago_in_words(@blogs.created_at) %> ago <br/> </small>
+      
+      <br />
+      <%= link_to 'Back to blogs', bloggs_path %> 
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_blogg_path(@blogs[:id]) %>
+        <%= link_to 'Destroy', @blogs, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%end%>
+   
+  </div>
+</html>

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014173453) do
+ActiveRecord::Schema.define(version: 20151022173132) do
 
-  create_table "sports", force: true do |t|
+  create_table "bloggs", force: true do |t|
     t.string   "name"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
     t.string   "blog_type"
   end
 

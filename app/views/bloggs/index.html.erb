@@ -1,0 +1,19 @@
+<div id='head'>Welcome to blogs section</div>
+
+  <div id = "index">
+    <% @blogs.each do |blogs| %>
+	    <p><%=link_to blogs.name, blogs %> </h4></p>
+		<p><%=truncate blogs.content, length: 160  %> <%= link_to 'read more', blogg_path(blogs) %> </p>
+
+		<% if user_signed_in? %>      
+	        
+	        <%= link_to 'Edit', edit_blogg_path(blogs) %>
+	        <%= link_to 'Destroy', blogs, method: :delete, data: { confirm: 'Are you sure?' } %>
+	    <%end%> 
+    <% end %>
+  </div>
+
+<br>
+<% if user_signed_in? %>
+	<%= link_to 'New Blog', new_blogg_path %>
+<%end%>
