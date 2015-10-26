@@ -3,9 +3,9 @@ class BloggsController < ApplicationController
 	before_filter :check_privileges!, only: [:new, :create, :edit, :update, :destroy]
 	def index
 		if user_signed_in?
-			@blogs=Blogg.where(user_id: current_user.id, blog_type: 'Sports')
+			@blogs=Blogg.where(user_id: current_user.id)
 		else
-			@blogs=Blogg.where(blog_type: 'Sports')
+			@blogs=Blogg.all
 		end
 	end
 	

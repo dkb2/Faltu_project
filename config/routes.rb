@@ -18,6 +18,16 @@ resources :users
 
 resources :bloggs
 
+get '/sports', to: 'bloggs#index'
+post '/sportscreate', to: 'bloggs#create'
+get '/sportsnew', to: 'bloggs#new'
+get '/sportsedit', to: 'bloggs#edit'
+get '/sportsshow', to: 'bloggs#show'
+put '/sportsupdate', to: 'bloggs#update'
+delete '/sportsdelete', to: 'bloggs#destroy'
+
+get '/music',  to: 'bloggs#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

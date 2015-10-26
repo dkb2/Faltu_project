@@ -1,19 +1,31 @@
+<script type="text/javascript">
+$(document).ready(function() {
+	var url=window.location.href 
+ window.alert(url)
+}
+    
+</script>
+
 <div id='head'>Welcome to blogs section</div>
 
   <div id = "index">
-    <% @blogs.each do |blogs| %>
-	    <p><%=link_to blogs.name, blogs %> </h4></p>
-		<p><%=truncate blogs.content, length: 160  %> <%= link_to 'read more', blogg_path(blogs) %> </p>
+  
+    <% @blogs.each do |blog| %>
+	    <p><%=link_to blog.name, sports_path %> </h4></p>
+		<p><%=truncate blog.content, length: 160  %> <%= link_to 'read more', blogg_path(blog) %> </p>
 
 		<% if user_signed_in? %>      
 	        
-	        <%= link_to 'Edit', edit_blogg_path(blogs) %>
-	        <%= link_to 'Destroy', blogs, method: :delete, data: { confirm: 'Are you sure?' } %>
+	        <%= link_to 'Edit', sportsedit_path(blog) %>
+	        <%= link_to 'Destroy', sportsdelete_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 	    <%end%> 
     <% end %>
   </div>
 
 <br>
 <% if user_signed_in? %>
-	<%= link_to 'New Blog', new_blogg_path %>
+	<%= link_to 'New Blog', sportsnew_path %>
 <%end%>
+
+
+
