@@ -2,8 +2,11 @@ class BloggsController < ApplicationController
 
 	before_filter :check_privileges!, only: [:new, :create, :edit, :update, :destroy]
 	def index
+		
+		path = request.original_url
+		blog_type = path.split('/').last 
 		if user_signed_in?
-			@blogs=Blogg.where(user_id: current_user.id)
+			@blogs=Blogg.where(user_id: current_user.id, blog_type: blog_type)
 		else
 			@blogs=Blogg.all
 		end
