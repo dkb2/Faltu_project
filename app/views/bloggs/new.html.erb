@@ -1,4 +1,16 @@
 
+<script type="text/javascript" charset="utf-8">
+      $(function() {
+        var blog_type=window.location.pathname
+        if(blog_type=='/sportsnew'){
+        	var type = 'sports'
+        }else{
+        	var type='music'
+        }
+        var elem = document.getElementById("blogg_blog_type");
+        elem.value=type
+      })
+    </script>
 <h1>Add a new blog </h1>
 <%= form_for @blogs do |f| %>
 <%if @blogs.errors.any? %>
@@ -15,9 +27,11 @@
 <p><%= f.label :content %><br/>
 <%= f.text_area :content %>
 </p>
+
 <p><%= f.label :blog_type %><br/>
 <%= f.text_area :blog_type %>
 </p>
+
 <p><%= f.submit "Add a new blog" %>
 </p>
 <%end%>

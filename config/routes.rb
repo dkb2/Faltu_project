@@ -27,6 +27,13 @@ put '/sportsupdate', to: 'bloggs#update'
 delete '/sportsdelete', to: 'bloggs#destroy'
 
 get '/music',  to: 'bloggs#index'
+post '/musiccreate', to: 'bloggs#create'
+get '/musicnew', to: 'bloggs#new'
+get '/musicedit', to: 'bloggs#edit'
+get '/musicshow', to: 'bloggs#show'
+put '/musicupdate', to: 'bloggs#update'
+delete '/musicdelete', to: 'bloggs#destroy'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
